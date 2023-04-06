@@ -1,6 +1,8 @@
 use macroquad::prelude::*;
 use std::time::Instant;
 
+mod icons;
+
 const PADDLE_HEIGHT: f32 = 200.0;
 const PADDLE_WIDTH: f32 = 20.0;
 const BALL_RADIUS: f32 = 15.0;
@@ -11,6 +13,22 @@ const PADDLE_MOVE_SPEED: f32 = 500.0;
 const BALL_MOVE_SPEED: f32 = 500.0;
 
 const LINE_RATE: f32 = 50.0;
+
+fn window_config() -> Conf {
+    let icon = miniquad::conf::Icon {
+        small: icons::ICON_SMALL,
+        medium: icons::ICON_MEDIUM,
+        big: icons::ICON_BIG
+    };
+
+    Conf {
+        window_title: "Pong!".to_owned(),
+        window_width: 1600,
+        window_height: 1200,
+        icon: Some(icon),
+        ..Default::default()
+    }
+}
 
 fn clamp_paddle(position: f32) -> f32 {
     if position < 0.0 {
@@ -34,7 +52,7 @@ fn draw_center_line() {
     }
 }
 
-#[macroquad::main("Pong")]
+#[macroquad::main(window_config)]
 async fn main() {
     let mut left_score: u32 = 0;
     let mut right_score: u32 = 0;

@@ -108,13 +108,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "518faa5064866338b013ff9b2350dc318e14cc4fcd6cb8206d7e7c9886c98815"
 
 [[package]]
-name = "graphics-2d"
-version = "0.1.0"
-dependencies = [
- "macroquad",
-]
-
-[[package]]
 name = "hashbrown"
 version = "0.11.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -262,6 +255,13 @@ name = "quad-rand"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "658fa1faf7a4cc5f057c9ee5ef560f717ad9d8dc66d975267f709624d6e1ab88"
+
+[[package]]
+name = "rusty-pong"
+version = "0.1.0"
+dependencies = [
+ "macroquad",
+]
 
 [[package]]
 name = "ttf-parser"
