@@ -23,8 +23,8 @@ fn window_config() -> Conf {
 
     Conf {
         window_title: "Pong!".to_owned(),
-        window_width: 1600,
-        window_height: 1200,
+        window_width: 1200,
+        window_height: 800,
         icon: Some(icon),
         ..Default::default()
     }
